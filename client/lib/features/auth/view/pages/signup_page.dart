@@ -1,3 +1,6 @@
+import 'package:client/core/theme/app_pallete.dart';
+import 'package:client/features/auth/view/widgets/auth_gradient_button.dart';
+import 'package:client/features/auth/view/widgets/custom_field.dart';
 import 'package:flutter/material.dart';
 
 class SignupPage extends StatefulWidget {
@@ -13,13 +16,53 @@ class _SignupPageState extends State<SignupPage> {
     return Scaffold(
       appBar: AppBar(),
       body: Center(
-        child: Column(
-          children: [
-            Text(
-              "Sign Up",
-              style: TextStyle(fontSize: 50, fontWeight: FontWeight.bold),
-            ),
-          ],
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 20),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                "Crea una Cuenta",
+                style: TextStyle(fontSize: 45, fontWeight: FontWeight.bold),
+              ),
+              SizedBox(height: 30),
+              CustomField(hintText: "Nombre"),
+              SizedBox(height: 15),
+              CustomField(hintText: "Correo electrónico"),
+              SizedBox(height: 15),
+              CustomField(hintText: "Contraseña", isObscureText: true),
+              SizedBox(height: 20),
+              AuthGradientButton(
+                onTap: () {
+                  print("Se ha pulsado el boton 'Registrarse'");
+                },
+              ),
+              SizedBox(height: 20),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    "¿Ya tienes una cuenta?",
+                    style: TextStyle(fontSize: 15, fontWeight: FontWeight.w500),
+                  ),
+                  SizedBox(width: 5),
+                  InkWell(
+                    onTap: () {
+                      print("Se ha pulsado el boton 'Inicia Sesión'");
+                    },
+                    child: Text(
+                      "Inicia Sesión",
+                      style: TextStyle(
+                        fontSize: 15,
+                        fontWeight: FontWeight.bold,
+                        color: Pallete.gradient1,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ],
+          ),
         ),
       ),
     );
