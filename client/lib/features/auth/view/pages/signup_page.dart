@@ -23,7 +23,7 @@ class _SignupPageState extends State<SignupPage> {
             children: [
               Text(
                 "Crea una Cuenta",
-                style: TextStyle(fontSize: 45, fontWeight: FontWeight.bold),
+                style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
               ),
               SizedBox(height: 30),
               CustomField(hintText: "Nombre"),
